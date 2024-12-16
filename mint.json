@@ -1,18 +1,18 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "POW Cards",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.ico",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
+    "primary": "#3C82F6",
+    "light": "#8db3f0",
+    "dark": "#3C82F6",
     "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
+      "from": "#3C82F6",
+      "to": "#8db3f0"
     }
   },
   "topbarLinks": [
