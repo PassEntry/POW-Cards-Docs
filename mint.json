@@ -1,91 +1,68 @@
 {
-  "$schema": "https://mintlify.com/schema.json",
   "name": "POW Cards",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
   },
   "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#3C82F6",
-    "light": "#8db3f0",
-    "dark": "#3C82F6",
-    "anchors": {
-      "from": "#3C82F6",
-      "to": "#8db3f0"
-    }
+    "primary": "#0099FF",
+    "light": "#4DB8FF",
+    "dark": "#0072BF"
   },
   "topbarLinks": [
     {
-      "name": "Support",
-      "url": "mailto:hi@mintlify.com"
-    }
-  ],
-  "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
-  },
-  "tabs": [
-    {
-      "name": "API Reference",
-      "url": "api-reference"
+      "name": "GitHub",
+      "url": "https://github.com/passentry/"
     }
   ],
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "name": "API Reference",
+      "icon": "book-open",
+      "url": "api-reference"
     }
   ],
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "Getting Started",
       "pages": [
         "introduction",
-        "quickstart",
-        "development"
+        "quickstart"
       ]
     },
     {
-      "group": "Essentials",
+      "group": "Guides",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "guides/solana-wallet-integration",
+        "guides/error-handling"
       ]
     },
     {
-      "group": "API Documentation",
+      "group": "API Reference",
       "pages": [
-        "api-reference/introduction"
+        "api-reference/overview",
+        {
+          "group": "Endpoints",
+          "pages": [
+            "api-reference/endpoints/health",
+            "api-reference/endpoints/claim-init",
+            "api-reference/endpoints/claim-wallet-pass"
+          ]
+        }
       ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "SDKs",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "sdk/javascript"
+      ]
+    },
+    {
+      "group": "Help",
+      "pages": [
+        "support"
       ]
     }
-  ],
-  "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://linkedin.com/company/mintlify"
-  }
+  ]
 }

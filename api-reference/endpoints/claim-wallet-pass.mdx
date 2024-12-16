@@ -1,0 +1,33 @@
+---
+title: 'POST /claim/wallet-pass'
+description: 'Create wallet pass'
+api: 'POST https://api.pow.cards/api/v1/claim/wallet-pass'
+---
+
+Verify signature and create a wallet pass.
+
+### Body Parameters
+
+<ParamField body="message" type="string" required>
+  The signed message from /claim/init
+</ParamField>
+
+<ParamField body="signature" type="string" required>
+  Base58 encoded signature
+</ParamField>
+
+<ParamField body="publicKey" type="string" required>
+  Solana wallet public key
+</ParamField>
+
+### Response
+
+<CodeGroup>
+
+```json Response
+{
+  "downloadUrl": "https://download.passentry.com/download?pass=mockId"
+}
+```
+
+</CodeGroup> 
