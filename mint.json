@@ -58,9 +58,15 @@
       ]
     },
     {
-      "group": "SDKs",
+      "group": "Issuance SDKs",
       "pages": [
-        "sdk/javascript"
+        "issuance-sdk/javascript"
+      ]
+    },
+    {
+      "group": "Reader SDKs",
+      "pages": [
+        "reader-sdk/android"
       ]
     },
     {
