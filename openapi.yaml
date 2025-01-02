@@ -139,6 +139,25 @@ paths:
                   type: string
                   description: Solana wallet public key
                   example: "Gg7Q5nmWKL2UygFr6BJRoAE6GkJ3dsHfCZ7N8s3yG6Fe"
+                walletType:
+                  type: string
+                  enum: [
+                    "Generic",
+                    "Phantom",
+                    "Solflare",
+                    "Coinbase Wallet",
+                    "MathWallet",
+                    "SafePal",
+                    "Clover",
+                    "Coin98",
+                    "HyperPay",
+                    "Krystal",
+                    "ONTO",
+                    "TokenPocket",
+                    "Trust"
+                  ]
+                  description: Type of wallet used for signing
+                  default: "Generic"
       responses:
         '200':
           description: Pass created successfully

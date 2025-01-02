@@ -58,7 +58,7 @@ import { useState } from 'react';
 import { WalletPassResponse } from '../types/auth';
 
 export const useWalletSignIn = () => {
-  const { publicKey, signMessage } = useWallet();
+  const { publicKey, signMessage, wallet } = useWallet();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -100,6 +100,7 @@ export const useWalletSignIn = () => {
           message: data.message,
           publicKey: publicKey.toBase58(),
           signature: bs58.encode(signature),
+          walletType: wallet?.adapter.name || 'Generic'
         }),
       });
 
@@ -189,3 +190,48 @@ The integration includes built-in error handling for common scenarios:
 5. **Multiple Wallets**: Support multiple wallet providers to give users choice.
 
 For more details on the available endpoints and responses, see the [API Reference](/api-reference/overview).
+
+## Wallet Type Detection
+
+The wallet type is automatically detected using the Solana wallet adapter:
+```typescript
+import { useWallet } from '@solana/wallet-adapter-react';
+
+export const useWalletSignIn = () => {
+  const { publicKey, signMessage, wallet } = useWallet();
+  
+  const signIn = async () => {
+    // ...
+    const verifyResponse = await fetch(`${apiUrl}/api/v1/claim/wallet-pass`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        message,
+        publicKey: publicKey.toBase58(),
+        signature: bs58.encode(signature),
+        walletType: wallet?.adapter.name || 'Generic' // Uses wallet adapter's name
+      }),
+    });
+    // ...
+  };
+};
+```
+
+The `wallet.adapter.name` property automatically provides the correct wallet type. While the wallet type doesn't affect the pass functionality itself, it determines which wallet app will be opened when users tap on the pass in their digital wallet. Supported wallet types include:
+- `Generic` (default)
+- `Phantom`
+- `Solflare`
+- `Coinbase Wallet`
+- `MathWallet`
+- `SafePal`
+- `Clover`
+- `Coin98`
+- `HyperPay`
+- `Krystal`
+- `ONTO`
+- `TokenPocket`
+- `Trust`
+
+This allows for a more seamless user experience as users can quickly access their preferred wallet application directly from the pass.
