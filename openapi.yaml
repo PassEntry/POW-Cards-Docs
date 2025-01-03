@@ -10,7 +10,7 @@ info:
     name: MIT
     url: https://opensource.org/licenses/MIT
 servers:
-  - url: https://api.pow.cards/api/v1
+  - url: https://api.pow.cards
     description: Production server
 externalDocs:
   description: Learn more about POW Cards
@@ -47,7 +47,7 @@ paths:
                   status:
                     type: string
                     example: "healthy"
-  /claim/init:
+  /api/v1/claim/init:
     get:
       tags:
         - Claims
@@ -109,7 +109,7 @@ paths:
                   error:
                     type: string
                     example: "Too many claim attempts, please try again later"
-  /claim/wallet-pass:
+  /api/v1/claim/wallet-pass:
     post:
       tags:
         - Claims
