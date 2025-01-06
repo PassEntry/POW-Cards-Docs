@@ -61,7 +61,7 @@
     {
       "group": "Issuance SDKs",
       "pages": [
-        "issuance-sdk/javascript"
+        "issuance-sdk/typescript"
       ]
     },
     {
